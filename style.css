@@ -13,3 +13,12 @@
   box-sizing: border-box; /* عشان البادينج والحدود داخل الحساب */
   padding: 10px;
 }
+
+.navbar {
+  width: 100% !important;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+

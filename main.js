@@ -178,3 +178,13 @@ function decrease(index){
 
 
 }
+
+
+
+
+window.addEventListener('load', () => {
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    navbar.style.width = '100%';
+  }
+});
