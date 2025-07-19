@@ -1,0 +1,15 @@
+#carouselExample{
+    display: none;
+}
+
+
+#carouselExample2{
+    display: none;
+}
+
+
+.container {
+  max-width: 100%; /* ما يزيدش عن عرض الشاشة */
+  box-sizing: border-box; /* عشان البادينج والحدود داخل الحساب */
+  padding: 10px;
+}
