@@ -70,3 +70,18 @@ h1{
 }
 
 
+.swiper-wrapper {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+
+
+.container,
+.row,
+.navbar,
+body,
+html {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
