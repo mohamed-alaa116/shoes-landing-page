@@ -2,7 +2,6 @@
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 
@@ -18,7 +17,7 @@
 .navbar {
   width: 100% !important;
   max-width: 100%;
-  overflow-x: hidden;
+ 
   box-sizing: border-box;
 }
 
@@ -77,11 +76,22 @@ h1{
 
 
 
-.container,
-.row,
-.navbar,
-body,
-html {
+html, body {
   max-width: 100% !important;
-  overflow-x: hidden !important;
+  overflow-x: hidden !important; /* لمنع السكرول الأفقي */
+  overflow-y: auto !important; /* السماح بالسكرول العمودي */
 }
+
+
+
+
+
+.swiper-slide img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+
+
+
