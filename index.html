@@ -11,13 +11,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
 
     <style>
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   filter: invert(27%) sepia(89%) saturate(7486%) hue-rotate(357deg) brightness(101%) contrast(102%);
+};
+
+.myProductsSwiper .swiper-pagination .swiper-pagination-bullet  {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
+
+.swiper-pagination-bullet-active {
+  background-color: #ffffff !important;  /* أبيض ناصع للنقطة النشطة */
+  transform: scale(1.3);
+}
+
+.swiper-pagination {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+
 </style>
 
 </head>
@@ -27,8 +53,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-      <div class="col-4 col-md-4 mb-1">
-        <span class="text-white">Shoezak</span>
+      <div class="col-4 col-md-4 mbottom-0 right-0">
+        <span class="text-white fw-bold">SHOEZAK</span>
         <span><img src="imgs/icon.jpg" style="width: 40px; border-radius: 50%;"></span>
       </div>
 
@@ -67,68 +93,92 @@
 </nav>
 
 
-<div class="sec1" style="min-height: 100vh; background-color: black;" id="home">
+<div class="sec1 d-flex align-items-center justify-content-center" style="position: relative; min-height: 100vh; background-image: url('imgs/test.jpg'); background-size: cover; background-position: center;">
 
-  <div class="container pt-5">
-    <div class="row d-flex align-items-center justify-content-between">
-      
-      <div class="text-div col-12 col-md-6 mt-5 mt-md-0">
-        <h2 class="text-white animate__animated animate__rollIn animate__slowe">Your elegance starts here.</h2>
-        <p class="text-danger animate__animated animate__rollIn animate__slowe">Shoezak is the perfect destination for anyone looking for premium,
-           stylish, and comfortable shoes at fair prices. Their products are crafted with care, using high-quality materials that ensure durability and comfort.
-            Orders arrive quickly and securely, making the shopping experience smooth and reliable. Shoezak truly offers value, 
-            elegance, and performance in every step.</p>
-        <h4 class="text-white animate__animated animate__rollIn animate__slowe">Your comfort is our responsibility.</h4>
-      </div>
+  <!-- Overlay -->
+  <div style="position: absolute; top:0; left:0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 1;" ></div>
 
-      <div class="img-div col-12 col-md-6 d-flex justify-content-end">
-        <img src="https://redtape.com/cdn/shop/files/RSO4034_1_40cd841c-11dc-4c78-ab85-bfad034e31fe.jpg?v=1751015717"
-          class="img-fluid" alt="Sneaker" style="border-radius: 20px;">
+  <!-- المحتوى -->
+  <div style="position: relative; z-index: 2;" class="container d-flex justify-content-center">
+    <div class="row ">
+      <div class="text-div col-12  text-center" data-aos="slide-left"  data-aos-duration="1000">
+        <h1 class="fw-bold" style="color: #ffffff;">Your elegance starts here.</h1>
+        <h4 style="color: #ffffff;">Shoezak is the perfect destination for anyone looking for premium,<br> stylish, and comfortable shoes at fair prices...</h4>
+        <h4 class="fw-bold" style="color: #ffffff;">Your comfort is our responsibility.</h4>
+      <a href="#products" class="btn btn-primary mt-2">Shop Now</a>
+
       </div>
-    
     </div>
   </div>
-  
+
 </div>
 
 
 
-<div class="sec2 pb-5 bg-dark" id="about">
-    <div class="container">
-        <h2 class="text-danger p-5 text-center" data-aos="slide-left" data-aos-duration="1000">Why Shoezak Is The Best....</h2>
-        <div class="row">
+<section class="hero-banner">
+  <div class="hero-overlay">
+    <div class="hero-content text-center">
+      <h1 style="color:#ffffff" data-aos="slide-left"  data-aos-duration="1000">Welcome to <span style="color:#d35400">Shoessak</span></h1>
+      <p style="color:#ffffff" data-aos="slide-right"  data-aos-duration="1000">Your ultimate destination for latest sneakers.</p>
+    </div>
+  </div>
+</section>
 
-            <div class="card1 col-12 col-md-6 col-lg-3 gap-2 p-3 text-center text-md-start" style="border:white 3px solid;" data-aos="flip-left"
+
+
+
+
+
+<div class="sec2 pb-5" style="background-color:  #121212;"; id="about">
+    <div class="container-fluid">
+        <h2 class=" p-3 text-center fw-bold" data-aos="slide-left"  data-aos-duration="1000" style="color:#d35400;">Why Shoezak Is The Best....</h2>
+        <div class="row gap-3 justify-content-center" >
+
+            <div class="card1 col-10 col-md-5 col-lg-2 gap-2 p-3 text-center rounded-3 " style="border:white 3px solid;" data-aos="flip-left"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="2000" >
-                <b class="text-danger">high quality</b>
-                <hr class="text-white">
-                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquid unde illum fuga magnam placeat facilis doloremque deleniti nostrum rerum.</p>
+                <b style="color:#d35400;">High Quality</b>
+                <span><img src="imgs/high quality.jpg" style="border-radius: 50%; width: 40px;"></span>
+                <hr style="color: #ffffff;">
+                <p style="color:#ffffff;">Shoezak shoes are crafted with premium materials, delivering exceptional comfort, durability, and style that lasts all day long.</p>
             </div>
 
-            <div class="card2 col-12 col-md-6 col-lg-3 gap-2 p-3 text-center text-md-start" style="border:white 3px solid;" data-aos="flip-left"
+            <div class="card2 col-10 col-md-5 col-lg-2 gap-2 p-3 text-center rounded-3 " style="border:white 3px solid;" data-aos="flip-left"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="2000">
-                <b class="text-danger ">Competitive prices</b>
-                <hr class="text-white">
-                <p class="text-white ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquid unde illum fuga magnam placeat facilis doloremque deleniti nostrum rerum.</p>
+                <b style="color:#d35400;">Competitive prices</b>
+                <span><img src="imgs/best price.jpg" style="border-radius: 50%; width: 40px;"></span>
+                <hr style="color: #ffffff;">
+                <p style="color: #ffffff;">At Shoezak, we believe in offering premium quality footwear at competitive prices that suit every budget without compromising on style.</p>
             </div>
 
-            <div class="card3 col-12 col-md-6 col-lg-3 gap-2 p-3 text-center text-md-start" style="border:white 3px solid;" data-aos="flip-left"
+            <div class="card3 col-10 col-md-5 col-lg-2 gap-2 p-3 text-center rounded-3 " style="border:white 3px solid;" data-aos="flip-left"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="2000">
-                <b class="text-danger ">Delivery speed </b>
-                <hr class="text-white">
-                <p class="text-white ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquid unde illum fuga magnam placeat facilis doloremque deleniti nostrum rerum.</p>
+                <b style="color:#d35400">Delivery speed </b>
+                <span><img src="imgs/delivery speed.jpg" style="border-radius: 50%; width: 40px;"></span>
+                <hr style="color: #ffffff;">
+                <p style="color: #ffffff;">Shoezak ensures fast and reliable delivery, getting your favorite shoes to your doorstep quickly—because we value your time and trust.</p>
             </div>
 
-            <div class="card4 col-12 col-md-6 col-lg-3 gap-2 p-3 text-center text-md-start" style="border:white 3px solid;" data-aos="flip-left"
+            <div class="card4 col-10 col-md-5 col-lg-2 gap-2 p-3 text-center rounded-3 " style="border:white 3px solid;" data-aos="flip-left"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="2000">
-                <b class="text-danger ">Retrieval</b>
-                <hr class="text-white">
-                <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquid unde illum fuga magnam placeat facilis doloremque deleniti nostrum rerum.</p>
+                <b style="color:#d35400;">Retrieval</b>
+                <span><img src="imgs/reterval.jpg" style="border-radius: 50%; width: 40px;"></span>
+                <hr style="color: #ffffff;">
+                <p style="color: #ffffff;">Shoezak offers an easy and hassle-free return process, so you can shop confidently knowing you can return items if needed.</p>
             </div>
+
+             <div class="card5 col-10 col-md-5 col-lg-2 gap-2 p-3 text-center rounded-3" style="border:white 3px solid;" data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="2000">
+              <b style="color:#d35400;">Style & Design</b>
+              <span><img src="imgs/best design.jpg" style="border-radius: 50%; width: 40px;"></span>
+              <hr style="color: #ffffff;">
+              <p style="color: #ffffff;">Shoezak combines modern trends with timeless elegance, crafting shoes that elevate your look for every occasion.</p>
+            </div>
+           
         </div>
     </div>
 </div>
@@ -137,220 +187,477 @@
 
 
 
-<div class="sec3" style="display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: black;" id="products">
-  <div class="container me-auto" style="background-color: black;">
+<div class="sec3 pb-5" style=" min-height: 100vh; background-color: #1a1a1a;" id="products">
+  <div class="container me-auto" style="background-color: #1a1a1a;">
 
-    <h2 class="text-danger p-5 text-center" data-aos="slide-left" data-aos-duration="1000">Our Products</h2>
+    <h2 class="p-3 text-center fw-bold" style="color:#d35400;" data-aos="slide-left" data-aos-duration="1000">Our Products</h2>
 
-    <div class="row w-100 ms-auto">
-      
-<div class="for-men col-12 col-md-6 col-lg-6 d-flex flex-column align-items-center" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000" 
-    >
-  <img src="https://deserteg.com/cdn/shop/files/2_9efcad3e-bb14-4014-9202-d44098fba40b.jpg?v=1749049119&width=823" 
-       style="width: 400px; height: 400px; object-fit: cover;cursor: pointer;" class="img-fluid rounded-circle" data-bs-toggle="modal" data-bs-target="#myModal2">
-  <div class="card-text mt-2">
-    <h3 class="text-danger text-center" style="cursor: pointer;">FOR MEN</h3>
-  </div>
-</div>
 
-      <div class="for-women col-12 col-md-6 col-lg-6 d-flex flex-column align-items-center"  
-       data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
-        <img src="https://deserteg.com/cdn/shop/files/674_4.jpg?v=1748071832&width=823" 
-          style="width: 400px; height: 400px; object-fit: cover;cursor: pointer; " class="img-fluid rounded-circle" data-bs-toggle="modal" data-bs-target="#myModal">
-        <div class="card-text mt-2">
-          <h3 class="text-danger text-center" style="cursor: pointer;">FOR WOMEN</h3>
+<h3 class="text-center m-3" style="color: #ffffff;" data-aos="slide-right"  data-aos-duration="1000">Men's Section</h3>
+
+
+    <!-- داخل القسم products بدل Bootstrap Carousel -->
+<div class="swiper myProductsSwiper pb-5"style="z-index: 1; position:relative">
+  <div class="swiper-wrapper">
+    
+    <div class="swiper-slide">
+        <div class="bg-light rounded-3 position-relative" style="height: 400px; max-width:350px;">
+          <img src="imgs/s-m1.jpg" class="d-block w-100" alt="..." style="height: 60%; object-fit: contain; background-color: #ffffff;">
+          <div class="p-2">
+            <p>Lorem, ipsum dolor.</p>
+            <p>65$</p>
+            <span class="text-warning">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </span>            
+            <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+             style="bottom: 5px; width: 90%; border-radius: 30px;">
+             Buy Now
+            </button>
+          </div>
+        </div>
+    </div>
+
+
+        <div class="swiper-slide" >
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-m2.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>55$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom: 5px; width: 90%; border-radius: 30px;">
+            Buy Now
+          </button>
         </div>
       </div>
-
     </div>
-  </div>
-</div>
 
-
-
-
-
-
-
-
-
-<!-- مودال له id -->
-<div class="modal" tabindex="-1" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title text-danger">FOR WOMEN PRODUCTS</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <!-- السلايدر جوه المودال -->
-      <div id="carouselWomen" class="carousel slide w-100 mx-auto m-0" style="border: red 3px solid; max-width: 600px;">
-        <div class="carousel-inner text-center">
-          <div class="carousel-item active" id="w1">
-            <img src="imgs/s-w1.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">65 $</span>
-          </div>
-          <div class="carousel-item" id="w2">
-            <img src="imgs/s-w2.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">75 $</span>
-          </div>
-
-          <div class="carousel-item" id="w3">
-            <img src="imgs/s-w3.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">40 $</span>
-          </div>
-          <div class="carousel-item" id="w4">
-            <img src="imgs/s-w4.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">38 $</span>
-          </div>
-          <div class="carousel-item" id="w5">
-            <img src="imgs/s-w5.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">45 $</span>
-          </div>
-          <div class="carousel-item" id="w6">
-            <img src="imgs/s-w6.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">70 $</span>
-          </div>
-          <div class="carousel-item" id="w7">
-            <img src="imgs/s-w7.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">30 $</span>
-          </div>
-          <div class="carousel-item" id="w8">
-            <img src="imgs/s-w8.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">26 $</span>
-          </div>
-          <div class="carousel-item" id="w9">
-            <img src="imgs/s-w9.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">65 $</span>
-          </div>
-          <div class="carousel-item"id="w10">
-            <img src="imgs/s-w10.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">80 $</span>
-          </div>
-          <!-- باقي الصور ... -->
+        <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-m3.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>70$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselWomen" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselWomen" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button onclick="addToCartFromCarousel('carouselWomen')" class="btn btn-primary">Add to cart</button>
-
-
-      </div>
-
     </div>
-  </div>
-</div>
 
 
-<!-- مودال للـ FOR MEN فيه سلايدر -->
-<div class="modal m-0" tabindex="-1" id="myModal2">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-        <h5 class="modal-title text-danger">FOR MEN PRODUCTS</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <!-- ✅ السلايدر جوا المودال -->
-      <div id="carouselMen" class="carousel slide w-100 mx-auto m-0" style="border: red 3px solid; max-width: 600px;">
-        <div class="carousel-inner text-center">
-          <div class="carousel-item active" id="m1">
-            <img src="imgs/s-m1.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">50 $</span>
-          </div>
-          <div class="carousel-item" id="m2">
-            <img src="imgs/s-m2.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">65 $</span>
-          </div>
-          <div class="carousel-item" id="m3">
-            <img src="imgs/s-m3.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">70 $</span>
-          </div>
-
-          <div class="carousel-item" id="m4">
-            <img src="imgs/s-m4.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">46 $</span>
-          </div>
-
-          <div class="carousel-item"id="m5">
-            <img src="imgs/s-m5.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">65 $</span>
-          </div>
-
-                    
-          <div class="carousel-item" id="m6">
-            <img src="imgs/s-m6.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">45 $</span>
-          </div>
-
-          <div class="carousel-item" id="m7">
-            <img src="imgs/s-m7.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">89 $</span>
-          </div>
-
-          <div class="carousel-item" id="m8">
-            <img src="imgs/s-m8.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">60 $</span>
-          </div>
-
-          <div class="carousel-item" id="m9">
-            <img src="imgs/s-m9.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">47 $</span>
-          </div>
-
-          <div class="carousel-item" id="m10">
-            <img src="imgs/s-m10.jpg" class="img-fluid" alt="...">
-            <span class="fs-2 text-danger">56 $</span>
-          </div>
-          <!-- كمل باقي الصور حسب ما تحب -->
+        <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-m4.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>80$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMen" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselMen" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button onclick="addToCartFromCarousel('carouselMen')" class="btn btn-primary">Add to cart</button>
-
-      </div>
-
     </div>
+
+        <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-m5.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>85$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>    <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-m6.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>65$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>    <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-m7.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>45$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>    <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-m8.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>60$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>    <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-m9.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>64$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>    <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-m10.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>65$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- كرر نفس الـ div لكل منتج تاني: s-m2, s-m3... -->
+  </div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+
+
+<h3 class="text-center m-3" style="color: #ffffff;" data-aos="slide-right"  data-aos-duration="1000">Women's Section</h3>
+
+<div class="swiper myProductsSwiper"style="z-index: 1">
+  <div class="swiper-wrapper">
+    
+    <div class="swiper-slide">
+        <div class="bg-light rounded-3 position-relative" style="height: 400px; max-width:350px;">
+          <img src="imgs/s-w1.jpg" class="d-block w-100" alt="..." style="height: 60%; object-fit: contain; background-color: #ffffff;">
+          <div class="p-2">
+            <p>Lorem, ipsum dolor.</p>
+            <p>65$</p>
+            <span class="text-warning">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </span>            
+            <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+             style="bottom: 5px; width: 90%; border-radius: 30px;">
+             Buy Now
+            </button>
+          </div>
+        </div>
+    </div>
+
+
+        <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-w2.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>75$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom: 5px; width: 90%; border-radius: 30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+        <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-w3.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>50$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+        <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-w4.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>55$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+        <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-w5.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>65$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>    
+    
+    <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-w6.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>75$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>    
+    
+    <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-w7.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>60$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>    
+    
+    <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-w8.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>80$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>    
+    
+    <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-w9.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>56$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>    
+    
+    <div class="swiper-slide">
+      <div class="bg-light rounded-3 position-relative" style="height:400px; max-width:350px;">
+        <img src="imgs/s-w10.jpg"
+             class="d-block w-100"
+             style="height:60%;object-fit:contain;  background-color: #ffffff;" />
+        <div class="p-2">
+          <p>Lorem, ipsum dolor.</p>
+          <p>65$</p>
+          <span class="text-warning">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </span>
+          <button class="btn btn-primary d-block position-absolute By-Now-Btn"
+                  style="bottom:5px;width:90%;border-radius:30px;">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- كرر نفس الـ div لكل منتج تاني: s-m2, s-m3... -->
+  </div>
+
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
+</div>
   </div>
 </div>
 
 
 
 
-<div class="review bg-dark pb-5" id="review">
+
+
+
+
+
+<div class="review pb-5" style="background-color: #121212;" id="review">
   <div class="container">
 
-    <h2 class="text-center text-danger m-5">Our customers' opinion</h2>
+    <h2 class="p-3 text-center fw-bold" style="color:#d35400;" data-aos="fade-up"  data-aos-duration="1000">Our customers' opinion</h2>
 
     <div class="row justify-content-center align-items-stretch">
 
       <!-- Card 1 -->
-      <div class="col-8 col-md-5 col-lg-3 mt-2" data-aos="fade-up" data-aos-duration="1000">
-        <div class="card h-100">
+      <div class="col-8 col-md-5 col-lg-3 mt-2" data-aos="slide-right"  data-aos-duration="1000">
+        <div class="card h-100" >
           <img src="imgs/man1.png" class="card-img-top d-block mx-auto mt-3" style="width: 60%; height: auto;" alt="Noah">
           <div class="card-body text-center" >
-            <h5 class="card-title">Noah</h5>
+            <h5 class="card-title" style="color:#d35400;">Noah</h5>
             <p class="card-text">Shoezak shoes are high-quality, super comfortable, and well-made. Delivery was fast, and the price is great for the value offered.</p>
             <span class="text-warning">
               <i class="fas fa-star"></i>
@@ -368,7 +675,7 @@
         <div class="card h-100">
           <img src="imgs/man2.jpg" class="card-img-top d-block mx-auto mt-3" style="width: 60%; height: auto;" alt="Adam">
           <div class="card-body text-center">
-            <h5 class="card-title">Adam</h5>
+            <h5 class="card-title" style="color:#d35400;">Adam</h5>
             <p class="card-text">The shoes from Shoezak feel sturdy, stylish, and incredibly soft. Shipping was lightning-fast, and the cost is totally worth it.</p>
             <span class="text-warning">
               <i class="fas fa-star"></i>
@@ -382,11 +689,11 @@
       </div>
 
       <!-- Card 3 -->
-      <div class="col-8 col-md-5 col-lg-3 mt-2" data-aos="fade-up" >
+      <div class="col-8 col-md-5 col-lg-3 mt-2" data-aos="slide-left"  data-aos-duration="1000" >
         <div class="card h-100">
           <img src="imgs/man3.jpg" class="card-img-top d-block mx-auto mt-3" style="width: 60%; height: auto;" alt="Omar">
           <div class="card-body text-center">
-            <h5 class="card-title">Omar</h5>
+            <h5 class="card-title" style="color:#d35400;">Omar</h5>
             <p class="card-text">I loved my Shoezak order — excellent build, premium feel, and fast arrival. Amazing comfort and great price for such quality shoes.</p>
             <span class="text-warning">
               <i class="fas fa-star"></i>
@@ -411,7 +718,7 @@
 
 <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDark" aria-labelledby="offcanvasDarkLabel" style="max-width: 80%;">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title text-danger fw-bold" id="offcanvasDarkLabel">Your Purchases</h5>
+    <h5 class="offcanvas-title fw-bold" style="color: #d35400;" id="offcanvasDarkLabel">Your Purchases</h5>
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
@@ -421,29 +728,30 @@
 
 
 
-<footer class=" text-light bg-dark mt-50 " id="footer" style="border-top: red 1px solid;" itemid="contact">
+<footer class=" text-light bg-dark mt-50 " id="footer" style="border-top:#d35400 1px solid;" itemid="contact">
   <div class="container text-center text-md-start ">
     <div class="row">
       <!-- اسم الموقع أو اللوجو -->
-      <div class="col-6 col-md-4 col-lg-4  mb-1 text-center">
-        <span>Shoezak</span>
+      <div class="col-6 col-md-4 col-lg-4  mbottom-0 right-0 text-center">
+        <span class="fw-bold">SHOEZAK</span>
         <span><img src="imgs/icon.jpg" style="width: 40px; border-radius: 50%;"></span>
       </div>
 
    
 
-      <!-- روابط -->
-      <div class="col-6 col-md-4 col-lg-4 mb-1 text-center">
-        <ul class="list-unstyled d-flex gap-2">
-          <li><a href="#" class="text-light text-decoration-none"><img src="imgs/facebook.jpg" style="width:40px; border-radius: 50%;"></a></li>
-          <li><a href="#" class="text-light text-decoration-none"><img src="imgs/whatsapp.jpg" style="width:40px; border-radius: 50%;"></a></li>
-          <li><a href="#" class="text-light text-decoration-none"><img src="imgs/instagram.jpg" style="width:40px; border-radius: 50%;"></a></li>
-          <li><a href="#" class="text-light text-decoration-none"><img src="imgs/twitter.jpg" style="width:40px; border-radius: 50%;"></a></li>
-        </ul>
-      </div>
+<div class="col-6 col-md-4 col-lg-4 mb-0 text-center">
+  <p class="text-center">Contact Us</p>
+  <ul class="list-unstyled d-flex justify-content-center gap-2 mx-auto">
+    <li><a href="#" class="text-light text-decoration-none"><img src="imgs/facebook.jpg" style="width:40px; border-radius: 50%;"></a></li>
+    <li><a href="#" class="text-light text-decoration-none"><img src="imgs/whatsapp.jpg" style="width:40px; border-radius: 50%;"></a></li>
+    <li><a href="#" class="text-light text-decoration-none"><img src="imgs/instagram.jpg" style="width:40px; border-radius: 50%;"></a></li>
+    <li><a href="#" class="text-light text-decoration-none"><img src="imgs/twitter.jpg" style="width:40px; border-radius: 50%;"></a></li>
+  </ul>
+</div>
 
-         <div class="col-12 col-md-4 col-lg-4 mb-1 text-center">
-        <p>powerd by_mohamed alaa</p>
+
+         <div class="col-12 col-md-4 col-lg-4 mbottom-0 right-0 text-center">
+        <p style="color:#d35400;">powerd by_mohamed alaa</p>
       </div>
 
     </div>
@@ -455,6 +763,13 @@
 
 
 </div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
